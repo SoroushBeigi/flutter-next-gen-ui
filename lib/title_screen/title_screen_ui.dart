@@ -1,6 +1,7 @@
 import 'package:extra_alignments/extra_alignments.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_next_gen_ui/title_screen/diff_buttons.dart';
+import 'package:flutter_next_gen_ui/title_screen/start_button.dart';
 import 'package:gap/gap.dart';
 
 import '../assets.dart';
@@ -40,7 +41,16 @@ class TitleScreenUi extends StatelessWidget {
                 onDifficultyFocused: onDifficultyFocused,
               ),
             ),
-          ),                                      
+          ),   
+           BottomRight(                                    
+            child: UiScaler(
+              alignment: Alignment.bottomRight,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 20, right: 40),
+                child: StartButton(onPressed: () {}),
+              ),
+            ),
+          ),                                                                                
         ],
       ),
     );
@@ -49,7 +59,6 @@ class TitleScreenUi extends StatelessWidget {
 
 class _TitleText extends StatelessWidget {
   const _TitleText();
-
   @override
   Widget build(BuildContext context) {
     return Column(
