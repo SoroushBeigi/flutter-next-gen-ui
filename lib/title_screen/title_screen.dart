@@ -1,20 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_next_gen_ui/styles.dart';
 import 'package:flutter_next_gen_ui/title_screen/lit_image.dart';
+import 'package:flutter_next_gen_ui/title_screen/title_screen_ui.dart';
 
 import '../assets.dart';
 
-class TitleScreen extends StatelessWidget {
+class TitleScreen extends StatefulWidget {
   const TitleScreen({super.key});
 
+  @override
+  State<TitleScreen> createState() => _TitleScreenState();
+}
+
+class _TitleScreenState extends State<TitleScreen> {
   final _emitAmt = 0.7;
   final _orbaMT = 0.5;
 
+  int _difficulty = 0;
+  int? _difficultyOverride;
+
+  void _handleDifficultyPressed(int value) {
+    setState(() => _difficulty = value);
+  }
+
+  void _handleDifficultyFocused(int? value) {
+    setState(() => _difficultyOverride = value);
+  }
+
+  Color get emitColor =>
+      AppColors.emitColors[_difficultyOverride ?? _difficulty];
+  Color get orbColor => AppColors.orbColors[_difficultyOverride ?? _difficulty];
+
   @override
   Widget build(BuildContext context) {
-    final orbColor = AppColors.orbColors[0];
-    final emitColor = AppColors.emitColors[0];
-
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
@@ -52,6 +70,13 @@ class TitleScreen extends StatelessWidget {
               color: emitColor,
               imgSrc: AssetPaths.titleFgEmit,
               lightAmt: _emitAmt,
+            ),
+            Positioned.fill(
+              child: TitleScreenUi(
+                difficulty: _difficulty,
+                onDifficultyFocused: _handleDifficultyFocused,
+                onDifficultyPressed: _handleDifficultyPressed,
+              ),
             ),
           ],
         ),
