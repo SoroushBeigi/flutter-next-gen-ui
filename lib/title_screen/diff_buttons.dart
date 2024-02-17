@@ -1,5 +1,6 @@
 import 'package:extra_alignments/extra_alignments.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_next_gen_ui/assets.dart';
 import 'package:flutter_next_gen_ui/styles.dart';
 import 'package:focusable_control_builder/focusable_control_builder.dart';
@@ -26,19 +27,25 @@ class DifficultyButtons extends StatelessWidget {
           selected: difficulty == 0,
           onPressed: () => onDifficultyPressed(0),
           onHover: (over) => onDifficultyFocused(over ? 0 : null),
-        ),
+        ).animate()
+            .fadeIn(delay: 1.seconds, duration: .45.seconds)
+            .slide(begin: const Offset(0, .2)),
         _DifficultyBtn(
           label: 'Normal',
           selected: difficulty == 1,
           onPressed: () => onDifficultyPressed(1),
           onHover: (over) => onDifficultyFocused(over ? 1 : null),
-        ),
+        ).animate()
+            .fadeIn(delay: 1.3.seconds, duration: .45.seconds)
+            .slide(begin: const Offset(0, .2)),
         _DifficultyBtn(
           label: 'Hardcore',
           selected: difficulty == 2,
           onPressed: () => onDifficultyPressed(2),
           onHover: (over) => onDifficultyFocused(over ? 2 : null),
-        ),
+        ).animate()
+            .fadeIn(delay: 1.3.seconds, duration: .45.seconds)
+            .slide(begin: const Offset(0, .2)),
         const Gap(20),
       ],
     );
