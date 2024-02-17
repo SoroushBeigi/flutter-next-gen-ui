@@ -13,16 +13,18 @@ import '../common/ui_scaler.dart';
 import '../styles.dart';
 
 class TitleScreenUi extends StatelessWidget {
-   const TitleScreenUi({
+  final int difficulty;
+  final void Function(int difficulty) onDifficultyPressed;
+  final void Function(int? difficulty) onDifficultyFocused;
+  final VoidCallback onStartPressed;
+
+  const TitleScreenUi({
     super.key,
     required this.difficulty,
     required this.onDifficultyPressed,
     required this.onDifficultyFocused,
+    required this.onStartPressed,
   });
-
-  final int difficulty;
-  final void Function(int difficulty) onDifficultyPressed;
-  final void Function(int? difficulty) onDifficultyFocused; 
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class TitleScreenUi extends StatelessWidget {
               child: _TitleText(),
             ),
           ),
-           BottomLeft(            
+          BottomLeft(
             child: UiScaler(
               alignment: Alignment.bottomLeft,
               child: DifficultyButtons(
@@ -45,16 +47,16 @@ class TitleScreenUi extends StatelessWidget {
                 onDifficultyFocused: onDifficultyFocused,
               ),
             ),
-          ),   
-           BottomRight(                                    
+          ),
+          BottomRight(
             child: UiScaler(
               alignment: Alignment.bottomRight,
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 20, right: 40),
-                child: StartButton(onPressed: () {}),
+                 child: StartButton(onPressed: onStartPressed),
               ),
             ),
-          ),                                                                                
+          ),
         ],
       ),
     );
@@ -65,7 +67,7 @@ class _TitleText extends StatelessWidget {
   const _TitleText();
   @override
   Widget build(BuildContext context) {
-    Widget content =  Column(
+    Widget content = Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -85,10 +87,9 @@ class _TitleText extends StatelessWidget {
         Text('INTO THE UNKNOWN', style: TextStyles.h3)
             .animate()
             .fadeIn(delay: 1.seconds, duration: .7.seconds),
-        
       ],
     );
-    return Consumer<FragmentPrograms?>(                  // Add from here...
+    return Consumer<FragmentPrograms?>(
       builder: (context, fragmentPrograms, _) {
         if (fragmentPrograms == null) return content;
         return TickingBuilder(
