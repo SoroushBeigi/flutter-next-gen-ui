@@ -9,6 +9,7 @@ import 'package:flutter_next_gen_ui/orb_shader/orb_shader_widget.dart';
 import 'package:flutter_next_gen_ui/styles.dart';
 import 'package:flutter_next_gen_ui/title_screen/animated_colors.dart';
 import 'package:flutter_next_gen_ui/title_screen/lit_image.dart';
+import 'package:flutter_next_gen_ui/title_screen/particle.dart';
 import 'package:flutter_next_gen_ui/title_screen/title_screen_ui.dart';
 
 import '../assets.dart';
@@ -174,10 +175,21 @@ class _TitleScreenState extends State<TitleScreen>
                   pulseEffect: _pulseEffect,
                 ),
                 LitImage(
-                    color: emitColor,
-                    imgSrc: AssetPaths.titleMgEmit,
-                    lightAmt: _finalEmitLightAmt,
-                    pulseEffect: _pulseEffect,),
+                  color: emitColor,
+                  imgSrc: AssetPaths.titleMgEmit,
+                  lightAmt: _finalEmitLightAmt,
+                  pulseEffect: _pulseEffect,
+                ),
+
+                Positioned.fill(
+                  child: IgnorePointer(
+                    child: ParticleOverlay(
+                      color: orbColor,
+                      energy: _orbEnergy,
+                    ),
+                  ),
+                ),
+
                 Image.asset(
                   AssetPaths.titleFgBase,
                 ),
