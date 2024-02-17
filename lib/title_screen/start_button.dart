@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_next_gen_ui/assets.dart';
 import 'package:flutter_next_gen_ui/styles.dart';
 import 'package:focusable_control_builder/focusable_control_builder.dart';
@@ -48,8 +49,11 @@ class _StartButtonState extends State<StartButton> {
                 ),
               ),
             ],
-          ),
-        );
+          ).animate(autoPlay: false, onInit: (c) => _btnAnim = c)
+              .shimmer(duration: .7.seconds, color: Colors.black),
+        ).animate()
+            .fadeIn(delay: 2.3.seconds)
+            .slide(begin: const Offset(0, .2));
       },
     );
   }
