@@ -1,5 +1,6 @@
 import 'package:extra_alignments/extra_alignments.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_next_gen_ui/title_screen/diff_buttons.dart';
 import 'package:flutter_next_gen_ui/title_screen/start_button.dart';
 import 'package:gap/gap.dart';
@@ -77,8 +78,11 @@ class _TitleText extends StatelessWidget {
             Text('57', style: TextStyles.h2),
             Image.asset(AssetPaths.titleSelectedRight, height: 65),
           ],
-        ),
-        Text('INTO THE UNKNOWN', style: TextStyles.h3),
+        ).animate().fadeIn(delay: .8.seconds, duration: .7.seconds),
+        Text('INTO THE UNKNOWN', style: TextStyles.h3)
+            .animate()
+            .fadeIn(delay: 1.seconds, duration: .7.seconds),
+        
       ],
     );
   }
