@@ -28,7 +28,7 @@ class DifficultyButtons extends StatelessWidget {
           onPressed: () => onDifficultyPressed(0),
           onHover: (over) => onDifficultyFocused(over ? 0 : null),
         ).animate()
-            .fadeIn(delay: 1.seconds, duration: .45.seconds)
+            .fadeIn(delay: 1.3.seconds, duration: .45.seconds)
             .slide(begin: const Offset(0, .2)),
         _DifficultyBtn(
           label: 'Normal',
@@ -36,7 +36,7 @@ class DifficultyButtons extends StatelessWidget {
           onPressed: () => onDifficultyPressed(1),
           onHover: (over) => onDifficultyFocused(over ? 1 : null),
         ).animate()
-            .fadeIn(delay: 1.3.seconds, duration: .45.seconds)
+            .fadeIn(delay: 1.7.seconds, duration: .45.seconds)
             .slide(begin: const Offset(0, .2)),
         _DifficultyBtn(
           label: 'Hardcore',
@@ -44,7 +44,7 @@ class DifficultyButtons extends StatelessWidget {
           onPressed: () => onDifficultyPressed(2),
           onHover: (over) => onDifficultyFocused(over ? 2 : null),
         ).animate()
-            .fadeIn(delay: 1.3.seconds, duration: .45.seconds)
+            .fadeIn(delay: 2.1.seconds, duration: .45.seconds)
             .slide(begin: const Offset(0, .2)),
         const Gap(20),
       ],
