@@ -52,7 +52,7 @@ class _StartButtonState extends State<StartButton> {
           ).animate(autoPlay: false, onInit: (c) => _btnAnim = c)
               .shimmer(duration: .7.seconds, color: Colors.black),
         ).animate()
-            .fadeIn(delay: 2.3.seconds)
+            .fadeIn(delay: 2.5.seconds)
             .slide(begin: const Offset(0, .2));
       },
     );
