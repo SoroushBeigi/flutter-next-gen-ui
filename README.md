@@ -1,16 +1,8 @@
 # flutter_next_gen_ui
 
-A new Flutter project.
+A flutter game menu UI, designed for desktop and web. I have used [This Flutter codelab](https://codelabs.developers.google.com/codelabs/flutter-next-gen-uis) as reference.
+Animations and shaders are used to design a fascinating UI.
 
-## Getting Started
+## Result
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[![Flutter Next Gen UI](https://img.youtube.com/vi/YLOGpZHcr5Q/0.jpg)](https://www.youtube.com/watch?v=YLOGpZHcr5Q)
