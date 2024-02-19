@@ -5,4 +5,4 @@ Animations and shaders are used to design a fascinating UI.
 
 ## Result
 
-![](next-gen-ui.gif)
+![](next-gen-ui-result.gif)
