@@ -5,4 +5,4 @@ Animations and shaders are used to design a fascinating UI.
 
 ## Result
 
-[![Flutter Next Gen UI](https://img.youtube.com/vi/YLOGpZHcr5Q/0.jpg)](https://www.youtube.com/watch?v=YLOGpZHcr5Q)
+![](next-gen-ui.gif)
